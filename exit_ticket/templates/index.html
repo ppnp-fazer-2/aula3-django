@@ -13,7 +13,8 @@
   <section>
     <div class="conteudo">
       <h1>Exit ticket</h1>
-      <form id="formulario">
+      <form id="formulario" action="enviado" method="POST">
+        {% csrf_token %}
         <fieldset>
           <legend>Seus dados</legend>
           <div class="row">
