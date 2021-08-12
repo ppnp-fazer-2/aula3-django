@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from exit_ticket.models import views
+from exit_ticket.models import ExitTicket
 
 # Create your views here.
 
@@ -7,8 +7,9 @@ def render_index(request):
     return render(request, 'index.html', {})
 
 def render_exit_ticket_enviado(request):
-   exit_ticket_dados = {
+    exit_ticket_dados = {
         'nome': request.POST.get('nome'),
+        'email': request.POST.get('email'),
         'feedback': request.POST.get('feedback'),
         'ocupacao': request.POST.get('ocupacao'),
         'data': request.POST.get('dtcurso'),
